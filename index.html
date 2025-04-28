@@ -3,24 +3,32 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Meine Geschichtenwelt</title>
+    <title>Meine Geschichtenwelt/My Storyworld</title>
     <style>
         body {
             font-family: 'Arial', sans-serif;
-            background: linear-gradient(to right, #ffecd2, #fcb69f);
+            background: url('https://www.transparenttextures.com/patterns/white-wall-3.png'), linear-gradient(to right, #ffecd2, #fcb69f);
+            background-blend-mode: overlay;
+            background-size: cover;
             margin: 0;
             padding: 0;
             text-align: center;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
         }
         header {
             padding: 2rem;
-            background-color: #ffffff88;
+            background-color: #ffffffcc;
             backdrop-filter: blur(5px);
             border-bottom: 2px solid #ffb347;
         }
         header h1 {
             margin: 0.5rem 0;
             font-size: 2.5rem;
+        }
+        header h1::before {
+            content: "\1F4D6 "; /* 📖 Icon */
         }
         header p {
             margin: 0;
@@ -31,7 +39,8 @@
             display: flex;
             justify-content: center;
             gap: 2rem;
-            margin: 3rem 0;
+            margin: 4rem 0;
+            flex-wrap: wrap;
         }
         .language-button {
             padding: 1.5rem 3rem;
@@ -40,26 +49,31 @@
             border-radius: 12px;
             cursor: pointer;
             background-color: #ffb347;
-            transition: background-color 0.3s;
+            transition: background-color 0.3s, transform 0.3s;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
         }
         .language-button:hover {
             background-color: #ff9966;
+            transform: scale(1.05);
         }
         main {
+            flex-grow: 1;
             padding: 2rem;
         }
         footer {
-            margin-top: 3rem;
+            margin-top: auto;
             padding: 1rem;
             font-size: 0.9rem;
             color: #777;
+            background-color: #ffffffcc;
+            backdrop-filter: blur(5px);
+            border-top: 1px solid #ffb347;
         }
     </style>
 </head>
 <body>
     <header>
-        <h1>Meine Geschichtenwelt</h1>
-        <p>Welcome to my writing world / Willkommen in meiner Schreib-Welt</p>
+        <h1>Welcome to my writing world / Willkommen in meiner Schreib-Welt</h1>
     </header>
 
     <section class="language-selection">
@@ -68,8 +82,7 @@
     </section>
 
     <main>
-        <h2>Entdecke bald meine Geschichten!</h2>
-        <p>Hier findest du bald spannende Kurzgeschichten in deiner Lieblingssprache.</p>
+        <!-- Hauptinhalt bleibt leer, da Fokus auf Sprachwahl -->
     </main>
 
     <footer>
