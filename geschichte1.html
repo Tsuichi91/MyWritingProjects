@@ -5,7 +5,122 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Geschichte 1 - Detailansicht</title>
 <style>
-    /* (CSS bleibt wie zuvor, ausgelassen für Übersichtlichkeit) */
+    body {
+        margin: 0;
+        font-family: Arial, sans-serif;
+        background-color: #141414;
+        color: white;
+    }
+    header {
+        display: flex;
+        align-items: center;
+        padding: 1rem 2rem;
+        background-color: #000;
+    }
+    header a {
+        color: white;
+        text-decoration: none;
+        margin-right: 2rem;
+    }
+    main {
+        padding: 2rem;
+    }
+    .synopsis {
+        margin-bottom: 2rem;
+    }
+    h2 {
+        margin-bottom: 1rem;
+    }
+    .grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+        gap: 1.5rem;
+    }
+    .card {
+        background-color: #222;
+        border-radius: 20px;
+        perspective: 1000px;
+        box-shadow: 0 8px 16px rgba(0,0,0,0.7);
+        transition: transform 0.3s, box-shadow 0.3s;
+    }
+    .card-inner {
+        position: relative;
+        width: 100%;
+        height: 320px;
+        text-align: center;
+        transition: transform 0.8s;
+        transform-style: preserve-3d;
+        cursor: pointer;
+    }
+    .card:hover .card-inner {
+        transform: rotateY(180deg);
+    }
+    .card-front, .card-back {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        backface-visibility: hidden;
+        border-radius: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 1rem;
+        box-sizing: border-box;
+        overflow: hidden;
+    }
+    .card-front img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 20px;
+    }
+    .card-front {
+        background-color: #333;
+    }
+    .card-back {
+        background-color: #555;
+        transform: rotateY(180deg);
+        font-size: 0.9rem;
+        padding: 1rem;
+    }
+    .hauptcharaktere .card-front {
+        background: linear-gradient(135deg, #0066ff, #0033cc);
+    }
+    .nebencharaktere .card-front {
+        background: linear-gradient(135deg, #66cc66, #339933);
+    }
+    .chapter-card {
+        background-color: #222;
+        border-radius: 20px;
+        overflow: hidden;
+        text-align: center;
+        transition: background-color 0.3s, transform 0.3s;
+        box-shadow: 0 6px 12px rgba(0,0,0,0.6);
+    }
+    .chapter-card:hover {
+        background-color: #333;
+        transform: scale(1.05);
+    }
+    .chapter-card img {
+        width: 100%;
+        height: 200px;
+        object-fit: cover;
+        border-top-left-radius: 20px;
+        border-top-right-radius: 20px;
+    }
+    .chapter-card h3 {
+        margin: 1rem 0;
+        padding: 0 0.5rem;
+        font-size: 1rem;
+    }
+    .chapter-card a {
+        color: white;
+        text-decoration: none;
+        display: block;
+    }
+    .character-section {
+        margin-bottom: 3rem;
+    }
 </style>
 </head>
 <body>
@@ -22,76 +137,21 @@
     <section class="character-section hauptcharaktere">
         <h2>Hauptcharaktere</h2>
         <div class="grid">
-            <div class="card"><div class="card-inner">
-                <div class="card-front"><img src="platzhalter.jpg" alt="Hiro"></div>
-                <div class="card-back">Hirohiko "Hiro" Murimota: 19-jähriger Schüler zwischen Manhattan und Los Angeles, liebt Musik, Kochen und Bücher. Zwilling.</div>
-            </div></div>
-            <div class="card"><div class="card-inner">
-                <div class="card-front"><img src="platzhalter.jpg" alt="Lexi"></div>
-                <div class="card-back">Alexis "Lexi" Kim: 18-jährige Studentin aus Hollywood. Kreativer Löwe, liebt Zeichnen, Singen und Mode.</div>
-            </div></div>
-            <div class="card"><div class="card-inner">
-                <div class="card-front"><img src="platzhalter.jpg" alt="Sean"></div>
-                <div class="card-back">Sean Bradford: 21 Jahre alt, empathischer Fisch, liebt Tanzen, Fotografie und Autos.</div>
-            </div></div>
-            <div class="card"><div class="card-inner">
-                <div class="card-front"><img src="platzhalter.jpg" alt="Jane"></div>
-                <div class="card-back">Jane Wilson: 19-jährige Jungfrau, liebt Schreiben, Singen und Shopping.</div>
-            </div></div>
-            <div class="card"><div class="card-inner">
-                <div class="card-front"><img src="platzhalter.jpg" alt="TJ"></div>
-                <div class="card-back">Tyler-Jeremy "T.J." Young: 22-jähriger kreativer Wassermann an der UCLA, liebt Musik, Kochen und Tanzen.</div>
-            </div></div>
+            <!-- Hauptcharaktere Kacheln -->
         </div>
     </section>
 
     <section class="character-section nebencharaktere">
         <h2>Nebencharaktere</h2>
         <div class="grid">
-            <div class="card"><div class="card-inner">
-                <div class="card-front"><img src="platzhalter.jpg" alt="Yuki"></div>
-                <div class="card-back">Yukiko "Yuki" Murimota: 17 Jahre alt.</div>
-            </div></div>
-            <div class="card"><div class="card-inner">
-                <div class="card-front"><img src="platzhalter.jpg" alt="Lisa"></div>
-                <div class="card-back">Lisa-Sarah Murimota: 45 Jahre alt.</div>
-            </div></div>
-            <div class="card"><div class="card-inner">
-                <div class="card-front"><img src="platzhalter.jpg" alt="Steven"></div>
-                <div class="card-back">Steven Hansen: 19 Jahre alt.</div>
-            </div></div>
-            <div class="card"><div class="card-inner">
-                <div class="card-front"><img src="platzhalter.jpg" alt="Ryan"></div>
-                <div class="card-back">Ryan Mitchell: 20 Jahre alt.</div>
-            </div></div>
-            <div class="card"><div class="card-inner">
-                <div class="card-front"><img src="platzhalter.jpg" alt="Sung-Hoo"></div>
-                <div class="card-back">Sung-Hoo Murimota: 21 Jahre alt.</div>
-            </div></div>
+            <!-- Nebencharaktere Kacheln -->
         </div>
     </section>
 
     <section class="chapters">
         <h2>Kapitel</h2>
         <div class="grid">
-            <div class="chapter-card">
-                <a href="kapitel1.html">
-                    <img src="platzhalter_kapitel1.jpg" alt="Kapitel 1">
-                    <h3>Kapitel 1: Titel des Kapitels</h3>
-                </a>
-            </div>
-            <div class="chapter-card">
-                <a href="kapitel2.html">
-                    <img src="platzhalter_kapitel2.jpg" alt="Kapitel 2">
-                    <h3>Kapitel 2: Titel des Kapitels</h3>
-                </a>
-            </div>
-            <div class="chapter-card">
-                <a href="kapitel3.html">
-                    <img src="platzhalter_kapitel3.jpg" alt="Kapitel 3">
-                    <h3>Kapitel 3: Titel des Kapitels</h3>
-                </a>
-            </div>
+            <!-- Kapitel Kacheln -->
         </div>
     </section>
 </main>
