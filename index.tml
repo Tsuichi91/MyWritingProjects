@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meine Geschichtenwelt</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(to right, #ffecd2, #fcb69f);
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+        header {
+            padding: 2rem;
+            background-color: #ffffff88;
+            backdrop-filter: blur(5px);
+            border-bottom: 2px solid #ffb347;
+        }
+        header h1 {
+            margin: 0.5rem 0;
+            font-size: 2.5rem;
+        }
+        header p {
+            margin: 0;
+            font-size: 1.2rem;
+            color: #555;
+        }
+        .language-selection {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+        .language-button {
+            padding: 1.5rem 3rem;
+            font-size: 1.5rem;
+            border: none;
+            border-radius: 12px;
+            cursor: pointer;
+            background-color: #ffb347;
+            transition: background-color 0.3s;
+        }
+        .language-button:hover {
+            background-color: #ff9966;
+        }
+        main {
+            padding: 2rem;
+        }
+        footer {
+            margin-top: 3rem;
+            padding: 1rem;
+            font-size: 0.9rem;
+            color: #777;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Meine Geschichtenwelt</h1>
+        <p>Welcome to my writing world / Willkommen in meiner Schreib-Welt</p>
+    </header>
+
+    <section class="language-selection">
+        <button class="language-button" onclick="location.href='geschichten-de.html'">Deutsch</button>
+        <button class="language-button" onclick="location.href='geschichten-en.html'">English</button>
+    </section>
+
+    <main>
+        <h2>Entdecke bald meine Geschichten!</h2>
+        <p>Hier findest du bald spannende Kurzgeschichten in deiner Lieblingssprache.</p>
+    </main>
+
+    <footer>
+        &copy; 2025 Deine Geschichtenwelt
+    </footer>
+</body>
+</html>
