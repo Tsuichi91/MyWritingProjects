@@ -1,231 +1,86 @@
-<!-- index.html -->
 <!DOCTYPE html>
 <html lang="de">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Meine Geschichten</title>
-    <link rel="stylesheet" href="assets/css/style.css">
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #141414;
+            color: white;
+        }
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 2rem;
+            background-color: #000;
+        }
+        header h1 {
+            margin: 0;
+            font-size: 1.5rem;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin-left: 1rem;
+        }
+        .story-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 1rem;
+            padding: 2rem;
+        }
+        .story-card {
+            background-color: #222;
+            border-radius: 8px;
+            overflow: hidden;
+            cursor: pointer;
+            transition: transform 0.2s;
+            text-decoration: none;
+            color: inherit;
+        }
+        .story-card:hover {
+            transform: scale(1.05);
+        }
+        .story-card img {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+        }
+        .story-card h2, .story-card p {
+            padding: 0 1rem 1rem 1rem;
+            font-size: 1rem;
+        }
+    </style>
 </head>
 <body>
     <header>
         <h1>Meine Geschichten</h1>
-        <div id="filters">
-            <select id="languageFilter">
-                <option value="">Sprache</option>
-            </select>
-            <select id="genreFilter">
-                <option value="">Genre</option>
-            </select>
-        </div>
+        <nav>
+            <a href="#">Start</a>
+            <a href="#">Genres</a>
+            <a href="#">Über mich</a>
+        </nav>
     </header>
 
-    <main id="storyGrid">
-        <!-- Geschichten werden hier geladen -->
+    <main>
+        <section class="story-grid">
+            <a href="geschichte1.html" class="story-card">
+                <img src="20250428_0940_Nostalgic Manhattan Sunset_simple_compose_01jsxnbm8af2wvw4wkh6nvz04f.png" alt="Geschichte 1">
+                <h2>Nothing even matters, because it’s the time of my life</h2>
+            </a>
+            <a href="Still loving you – Why don’t you realize" class="story-card">
+                <img src="20250428_1311_Emotionaler Sonnenuntergangsmoment_simple_compose_01jsy1czbjeta9spdvgeqjc9zq.png" alt="Geschichte 2">
+                <h2>Geschichte 2</h2>
+            </a>
+            <a href="buchreihe.html" class="story-card">
+                <img src="20250428_1522_Parisian Night Suspense_simple_compose_01jsy8wq8see9appygh7yydz10.png" alt="Buchreihe Geschichte 3">
+                <h2>The Damned Truth</h2>
+            </a>
+        </section>
     </main>
-
-    <script src="assets/js/app.js"></script>
 </body>
 </html>
-
-<!-- story.html -->
-<!DOCTYPE html>
-<html lang="de">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Geschichtendetails</title>
-    <link rel="stylesheet" href="assets/css/style.css">
-</head>
-<body>
-    <header>
-        <a href="index.html">&larr; Zurück</a>
-    </header>
-
-    <main id="storyDetail">
-        <!-- Details der Geschichte werden hier geladen -->
-    </main>
-
-    <script src="assets/js/story.js"></script>
-</body>
-</html>
-
-/* assets/css/style.css */
-body {
-    background-color: #121212;
-    color: #ffffff;
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-}
-
-header {
-    padding: 20px;
-    background-color: #1f1f1f;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-h1 {
-    margin: 0;
-}
-
-#filters {
-    margin-top: 10px;
-}
-
-#filters select {
-    margin: 0 5px;
-    padding: 5px;
-    background-color: #2c2c2c;
-    color: white;
-    border: none;
-}
-
-#storyGrid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-    gap: 20px;
-    padding: 20px;
-}
-
-.storyCard {
-    background-color: #1f1f1f;
-    border-radius: 10px;
-    overflow: hidden;
-    cursor: pointer;
-    transition: transform 0.2s;
-}
-
-.storyCard:hover {
-    transform: scale(1.05);
-}
-
-.storyCard img {
-    width: 100%;
-    height: 300px;
-    object-fit: cover;
-}
-
-.storyCard .storyInfo {
-    padding: 10px;
-}
-
-/* assets/js/app.js */
-
-const storyGrid = document.getElementById('storyGrid');
-const languageFilter = document.getElementById('languageFilter');
-const genreFilter = document.getElementById('genreFilter');
-let stories = [];
-
-fetch('assets/data/stories.json')
-    .then(response => response.json())
-    .then(data => {
-        stories = data;
-        populateFilters();
-        displayStories(stories);
-    });
-
-function populateFilters() {
-    const languages = [...new Set(stories.map(story => story.language))];
-    const genres = [...new Set(stories.map(story => story.genre))];
-
-    languages.forEach(lang => {
-        const option = document.createElement('option');
-        option.value = lang;
-        option.textContent = lang;
-        languageFilter.appendChild(option);
-    });
-
-    genres.forEach(gen => {
-        const option = document.createElement('option');
-        option.value = gen;
-        option.textContent = gen;
-        genreFilter.appendChild(option);
-    });
-}
-
-languageFilter.addEventListener('change', () => filterStories());
-genreFilter.addEventListener('change', () => filterStories());
-
-function filterStories() {
-    const lang = languageFilter.value;
-    const genre = genreFilter.value;
-
-    const filtered = stories.filter(story => {
-        return (!lang || story.language === lang) && (!genre || story.genre === genre);
-    });
-
-    displayStories(filtered);
-}
-
-function displayStories(stories) {
-    storyGrid.innerHTML = '';
-    stories.forEach(story => {
-        const card = document.createElement('div');
-        card.className = 'storyCard';
-        card.innerHTML = `
-            <img src="${story.cover}" alt="${story.title}">
-            <div class="storyInfo">
-                <h3>${story.title}</h3>
-                <p>${story.genre}</p>
-            </div>
-        `;
-        card.addEventListener('click', () => {
-            window.location.href = `story.html?id=${story.id}`;
-        });
-        storyGrid.appendChild(card);
-    });
-}
-
-/* assets/js/story.js */
-
-const storyDetail = document.getElementById('storyDetail');
-const params = new URLSearchParams(window.location.search);
-const storyId = params.get('id');
-
-fetch('assets/data/stories.json')
-    .then(response => response.json())
-    .then(data => {
-        const story = data.find(story => story.id === storyId);
-        if (story) {
-            displayStory(story);
-        } else {
-            storyDetail.innerHTML = '<p>Geschichte nicht gefunden.</p>';
-        }
-    });
-
-function displayStory(story) {
-    storyDetail.innerHTML = `
-        <h1>${story.title}</h1>
-        <img src="${story.cover}" alt="${story.title}" style="width:100%; max-width:600px;">
-        <p>${story.description}</p>
-        <h2>Charaktere</h2>
-        <ul>
-            ${story.characters.map(c => `<li>${c}</li>`).join('')}
-        </ul>
-        <h2>Kapitel</h2>
-        <ol>
-            ${story.chapters.map(ch => `<li>${ch}</li>`).join('')}
-        </ol>
-    `;
-}
-
-/* assets/data/stories.json */
-[
-  {
-    "id": "story1",
-    "title": "Die Schatten der Stadt",
-    "cover": "assets/images/shadowcity.jpg",
-    "language": "Deutsch",
-    "genre": "Mystery",
-    "characters": ["Anna", "Lukas", "Professor Weber"],
-    "chapters": [
-      "Kapitel 1: Die Ankunft",
-      "Kapitel 2: Die Spur",
-      "Kapitel 3: Das Geheimnis"
-    ],
-    "description": "In den dunklen Gassen der Stadt verbergen sich Geheimnisse, die nur darauf warten, entdeckt zu werden."
-  }
-]
