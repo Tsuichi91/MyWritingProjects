@@ -1,84 +1,45 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Meine Geschichten</title>
-    <style>
-        body {
-            margin: 0;
-            font-family: Arial, sans-serif;
-            background-color: #141414;
-            color: white;
-        }
-        header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 1rem 2rem;
-            background-color: #000;
-        }
-        header h1 {
-            margin: 0;
-            font-size: 1.5rem;
-        }
-        nav a {
-            color: white;
-            text-decoration: none;
-            margin-left: 1rem;
-        }
-        .story-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-            gap: 1rem;
-            padding: 2rem;
-        }
-        .story-card {
-            background-color: #222;
-            border-radius: 8px;
-            overflow: hidden;
-            cursor: pointer;
-            transition: transform 0.2s;
-            text-decoration: none;
-            color: inherit;
-        }
-        .story-card:hover {
-            transform: scale(1.05);
-        }
-        .story-card img {
-            width: 100%;
-            height: 500px;
-            object-fit: cover;
-        }
-        .story-card h2, .story-card p {
-            padding: 0 1rem 1rem 1rem;
-            font-size: 1rem;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Meine Geschichten</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
 </head>
-<body>
-    <header>
-        <h1>Meine Geschichten</h1>
-        <nav>
-            <a href="#">Start</a>
-        </nav>
-    </header>
+<body class="bg-gray-100 text-gray-900">
 
-    <main>
-        <section class="story-grid">
-            <a href="geschichte1.html" class="story-card">
-                <img src="Story-1/20250428_1025_New Beginnings in Manhattan_simple_compose_01jsxqza44e02v8nzh4whsmv90.png" alt="Geschichte 1">
-                <h2>Nothing even matters, because it’s the time of my life</h2>
-            </a>
-            <a href="geschichte2.html" class="story-card">
-                <img src="Story-1/20250428_1031_Solitude in Central Park_simple_compose_01jsxr8j2yfcyaxmgz46b8v993.png" alt="Geschichte 2">
-                <h2>Still loving you – Why don’t you realize?</h2>
-            </a>
-            <a href="buchreihe.html" class="story-card">
-                <img src="Story-1/20250428_1033_Lost in Manhattan_simple_compose_01jsxrd4e8ey9a8e4v2thdfxvs.png" alt="Buchreihe Geschichte 3">
-                <h2>The Damned Truth Series</h2>
-            </a>
-        </section>
-    </main>
+  <!-- Navigation -->
+  <header class="bg-white shadow p-4">
+    <div class="container mx-auto flex justify-between items-center">
+      <h1 class="text-xl font-bold">Meine Geschichten</h1>
+      <nav>
+        <a href="index.html" class="text-gray-700 hover:text-gray-900">Home</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Landingpage Content -->
+  <main class="container mx-auto p-8">
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+      <!-- Buch 1 -->
+      <a href="buch1.html" class="block bg-white rounded-2xl shadow-lg p-8 transform hover:scale-105 transition">
+        <img src="Story-1/20250428_0940_Nostalgic Manhattan Sunset_simple_compose_01jsxnbm8af2wvw4wkh6nvz04f.png" alt="Cover Buch 1" class="w-full h-64 object-cover rounded-xl mb-4">
+        <h2 class="text-2xl font-semibold mb-2">Nothing even matters, because it’s the time of my life</h2>
+      </a>
+
+      <!-- Buch 2 -->
+      <a href="geschichte1.html" class="block bg-white rounded-2xl shadow-lg p-8 transform hover:scale-105 transition">
+        <img src="Story-2/20250428_1311_Emotionaler Sonnenuntergangsmoment_simple_compose_01jsy1czbjeta9spdvgeqjc9zq.png" alt="Cover Buch 2" class="w-full h-64 object-cover rounded-xl mb-4">
+        <h2 class="text-2xl font-semibold mb-2">Still loving you – Why don’t you realize?</h2>
+      </a>
+
+      <!-- Büchereihe -->
+      <a href="reihe.html" class="block bg-white rounded-2xl shadow-lg p-8 transform hover:scale-105 transition">
+        <img src="Story-3/Book-1/20250428_1522_Parisian Night Suspense_simple_compose_01jsy8wq8see9appygh7yydz10.png" alt="Cover Büchereihe" class="w-full h-64 object-cover rounded-xl mb-4">
+        <h2 class="text-2xl font-semibold mb-2">The Damned Truth Series</h2>
+      </a>
+    </div>
+  </main>
+
 </body>
 </html>
