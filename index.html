@@ -1,210 +1,89 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Nothing even matters, because it’s the time of my life - Details</title>
-<style>
-    body {
-        margin: 0;
-        font-family: Arial, sans-serif;
-        background-color: #141414;
-        color: white;
-    }
-    header {
-        display: flex;
-        align-items: center;
-        padding: 1rem 2rem;
-        background-color: #000;
-    }
-    header a {
-        color: white;
-        text-decoration: none;
-        margin-right: 2rem;
-    }
-    main {
-        padding: 2rem;
-    }
-    .synopsis {
-        margin-bottom: 2rem;
-    }
-    h2 {
-        margin-bottom: 1rem;
-    }
-    .grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-        gap: 1.5rem;
-    }
-    .card {
-        background-color: #222;
-        border-radius: 20px;
-        perspective: 1000px;
-        box-shadow: 0 8px 16px rgba(0,0,0,0.7);
-        transition: transform 0.3s, box-shadow 0.3s;
-    }
-    .card-inner {
-        position: relative;
-        width: 100%;
-        height: 320px;
-        text-align: center;
-        transition: transform 0.8s;
-        transform-style: preserve-3d;
-        cursor: pointer;
-    }
-    .card:hover .card-inner {
-        transform: rotateY(180deg);
-    }
-    .card-front, .card-back {
-        position: absolute;
-        width: 100%;
-        height: 100%;
-        backface-visibility: hidden;
-        border-radius: 20px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        padding: 1rem;
-        box-sizing: border-box;
-        overflow: hidden;
-    }
-    .card-front img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        border-radius: 20px;
-    }
-    .card-front {
-        background-color: #333;
-    }
-    .card-back {
-        background-color: #555;
-        transform: rotateY(180deg);
-        font-size: 0.9rem;
-        padding: 1rem;
-    }
-    .hauptcharaktere .card-front {
-        background: linear-gradient(135deg, #0066ff, #0033cc);
-    }
-    .nebencharaktere .card-front {
-        background: linear-gradient(135deg, #66cc66, #339933);
-    }
-    .chapter-card {
-        background-color: #222;
-        border-radius: 20px;
-        overflow: hidden;
-        text-align: center;
-        transition: background-color 0.3s, transform 0.3s;
-        box-shadow: 0 6px 12px rgba(0,0,0,0.6);
-    }
-    .chapter-card:hover {
-        background-color: #333;
-        transform: scale(1.05);
-    }
-    .chapter-card img {
-        width: 100%;
-        height: 200px;
-        object-fit: cover;
-        border-top-left-radius: 20px;
-        border-top-right-radius: 20px;
-    }
-    .chapter-card h3 {
-        margin: 1rem 0;
-        padding: 0 0.5rem;
-        font-size: 1rem;
-    }
-    .chapter-card a {
-        color: white;
-        text-decoration: none;
-        display: block;
-    }
-    .character-section {
-        margin-bottom: 3rem;
-    }
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meine Geschichten</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #141414;
+            color: white;
+        }
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 2rem;
+            background-color: #000;
+        }
+        header h1 {
+            margin: 0;
+            font-size: 1.5rem;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin-left: 1rem;
+        }
+        .story-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 1rem;
+            padding: 2rem;
+        }
+        .story-card {
+            background-color: #222;
+            border-radius: 8px;
+            overflow: hidden;
+            cursor: pointer;
+            transition: transform 0.2s;
+            text-decoration: none;
+            color: inherit;
+        }
+        .story-card:hover {
+            transform: scale(1.05);
+        }
+        .story-card img {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+        }
+        .story-card h2, .story-card p {
+            padding: 0 1rem 1rem 1rem;
+            font-size: 1rem;
+        }
+    </style>
 </head>
 <body>
-<header>
-    <a href="index.html">Zurück zur Übersicht</a>
-    <h1>Nothing even matters, because it’s the time of my life</h1>
-</header>
-<main>
+    <header>
+        <h1>Meine Geschichten</h1>
+        <nav>
+            <a href="#">Start</a>
+            <a href="#">Genres</a>
+            <a href="#">Über mich</a>
+        </nav>
+    </header>
 
-    <section class="character-section hauptcharaktere">
-        <h2>Hauptcharaktere</h2>
-        <div class="grid">
-            <div class="card"><div class="card-inner">
-                <div class="card-front"><img src="Story-1/Hirohiko “Hiro” Murimota.png" alt="Hiro"></div>
-                <div class="card-back">Hirohiko "Hiro" Murimota: 19-jähriger Schüler zwischen Manhattan und Los Angeles, liebt Musik, Kochen und Bücher. Zwilling.</div>
-            </div></div>
-            <div class="card"><div class="card-inner">
-                <div class="card-front"><img src="Story-1/Alexis “Lexi” Kim.png" alt="Lexi"></div>
-                <div class="card-back">Alexis "Lexi" Kim: 18-jährige Studentin aus Hollywood. Kreativer Löwe, liebt Zeichnen, Singen und Mode.</div>
-            </div></div>
-            <div class="card"><div class="card-inner">
-                <div class="card-front"><img src="Story-1/Sean Bradford.png" alt="Sean"></div>
-                <div class="card-back">Sean Bradford: 21 Jahre alt, empathischer Fisch, liebt Tanzen, Fotografie und Autos.</div>
-            </div></div>
-            <div class="card"><div class="card-inner">
-                <div class="card-front"><img src="Story-1/Jane Wilson.png" alt="Jane"></div>
-                <div class="card-back">Jane Wilson: 19-jährige Jungfrau, liebt Schreiben, Singen und Shopping.</div>
-            </div></div>
-            <div class="card"><div class="card-inner">
-                <div class="card-front"><img src="Story-1/Tyler-Jeremy “T.J.” Young.png" alt="TJ"></div>
-                <div class="card-back">Tyler-Jeremy "T.J." Young: 22-jähriger kreativer Wassermann an der UCLA, liebt Musik, Kochen und Tanzen.</div>
-            </div></div>
-        </div>
-    </section>
-
-    <section class="character-section nebencharaktere">
-        <h2>Nebencharaktere</h2>
-        <div class="grid">
-            <div class="card"><div class="card-inner">
-                <div class="card-front"><img src="Story-1/Yukiko “Yuki” Murimota.png" alt="Yuki"></div>
-                <div class="card-back">Yukiko "Yuki" Murimota: 17 Jahre alt.</div>
-            </div></div>
-            <div class="card"><div class="card-inner">
-                <div class="card-front"><img src="Story-1/Lisa-Sarah Murimota.png" alt="Lisa"></div>
-                <div class="card-back">Lisa-Sarah Murimota: 45 Jahre alt.</div>
-            </div></div>
-            <div class="card"><div class="card-inner">
-                <div class="card-front"><img src="Story-1/Steven Hansen.png" alt="Steven"></div>
-                <div class="card-back">Steven Hansen: 19 Jahre alt.</div>
-            </div></div>
-            <div class="card"><div class="card-inner">
-                <div class="card-front"><img src="Story-1/Ryan Mitchell.png" alt="Ryan"></div>
-                <div class="card-back">Ryan Mitchell: 20 Jahre alt.</div>
-            </div></div>
-            <div class="card"><div class="card-inner">
-                <div class="card-front"><img src="Story-1/Sung-Hoo Murimota.png" alt="Sung-Hoo"></div>
-                <div class="card-back">Sung-Hoo Murimota: 21 Jahre alt.</div>
-            </div></div>
-        </div>
-    </section>
-
-    <section class="chapters">
-        <h2>Kapitel</h2>
-        <div class="grid">
-            <div class="chapter-card">
-                <a href="kapitel1.html">
-                    <img src="Story-1/20250428_1025_New Beginnings in Manhattan_simple_compose_01jsxqza44e02v8nzh4whsmv90.png" alt="Kapitel 1">
-                    <h3>Kapitel 1: Show me</h3>
-                </a>
-            </div>
-            <div class="chapter-card">
-                <a href="kapitel2.html">
-                    <img src="Story-1/20250428_1031_Solitude in Central Park_simple_compose_01jsxr8j2yfcyaxmgz46b8v993.png" alt="Kapitel 2">
-                    <h3>Kapitel 2: Gone and not around any longer</h3>
-                </a>
-            </div>
-            <div class="chapter-card">
-                <a href="kapitel3.html">
-                    <img src="Story-1/20250428_1033_Lost in Manhattan_simple_compose_01jsxrd4e8ey9a8e4v2thdfxvs.png" alt="Kapitel 3">
-                    <h3>Kapitel 3: Feeldood Lies</h3>
-                </a>
-            </div>
-        </div>
-    </section>
-</main>
+    <main>
+        <section class="story-grid">
+            <a href="geschichte1.html" class="story-card">
+                <img src="cover_geschichte1.jpg" alt="Geschichte 1">
+                <h2>Geschichte 1</h2>
+                <p>Kurze Synopsis der Geschichte 1. Enthält 3 Kapitel.</p>
+            </a>
+            <a href="geschichte2.html" class="story-card">
+                <img src="cover_geschichte2.jpg" alt="Geschichte 2">
+                <h2>Geschichte 2</h2>
+                <p>Kurze Synopsis der Geschichte 2. Enthält 2 Kapitel.</p>
+            </a>
+            <a href="buchreihe.html" class="story-card">
+                <img src="cover_buchreihe.jpg" alt="Buchreihe Geschichte 3">
+                <h2>Buchreihe: Geschichte 3</h2>
+                <p>Kurze Synopsis der Buchreihe Geschichte 3. Enthält mehrere Bücher.</p>
+            </a>
+        </section>
+    </main>
 </body>
 </html>
