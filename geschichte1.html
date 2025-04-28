@@ -1,210 +1,215 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Nothing even matters, because it’s the time of my life - Details</title>
-<style>
-    body {
-        margin: 0;
-        font-family: Arial, sans-serif;
-        background-color: #141414;
-        color: white;
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nothing even matters, because it’s the time of my life - Detailseite</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <style>
+    .flip-card {
+      perspective: 1000px;
     }
-    header {
-        display: flex;
-        align-items: center;
-        padding: 1rem 2rem;
-        background-color: #000;
+    .flip-card-inner {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      transition: transform 0.8s;
+      transform-style: preserve-3d;
     }
-    header a {
-        color: white;
-        text-decoration: none;
-        margin-right: 2rem;
+    .flip-card.flipped .flip-card-inner {
+      transform: rotateY(180deg);
     }
-    main {
-        padding: 2rem;
+    .flip-card-front, .flip-card-back {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      backface-visibility: hidden;
+      border-radius: 1rem;
+      overflow: hidden;
     }
-    .synopsis {
-        margin-bottom: 2rem;
+    .flip-card-back {
+      transform: rotateY(180deg);
+      background-color: #f3f4f6;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 1rem;
+      text-align: center;
     }
-    h2 {
-        margin-bottom: 1rem;
-    }
-    .grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-        gap: 1.5rem;
-    }
-    .card {
-        background-color: #222;
-        border-radius: 0px;
-        perspective: 1000px;
-        box-shadow: 0 8px 16px rgba(0,0,0,0.7);
-        transition: transform 0.3s, box-shadow 0.3s;
-    }
-    .card-inner {
-        position: relative;
-        width: 100%;
-        height: 320px;
-        text-align: center;
-        transition: transform 0.8s;
-        transform-style: preserve-3d;
-        cursor: pointer;
-    }
-    .card:hover .card-inner {
-        transform: rotateY(180deg);
-    }
-    .card-front, .card-back {
-        position: absolute;
-        width: 100%;
-        height: 100%;
-        backface-visibility: hidden;
-        border-radius: 20px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        padding: 1rem;
-        box-sizing: border-box;
-        overflow: hidden;
-    }
-    .card-front img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        border-radius: 20px;
-    }
-    .card-front {
-        background-color: #333;
-    }
-    .card-back {
-        background-color: #555;
-        transform: rotateY(180deg);
-        font-size: 0.9rem;
-        padding: 1rem;
-    }
-    .hauptcharaktere .card-front {
-        background: linear-gradient(135deg, #0066ff, #0033cc);
-    }
-    .nebencharaktere .card-front {
-        background: linear-gradient(135deg, #66cc66, #339933);
-    }
-    .chapter-card {
-        background-color: #222;
-        border-radius: 20px;
-        overflow: hidden;
-        text-align: center;
-        transition: background-color 0.3s, transform 0.3s;
-        box-shadow: 0 6px 12px rgba(0,0,0,0.6);
-    }
-    .chapter-card:hover {
-        background-color: #333;
-        transform: scale(1.05);
-    }
-    .chapter-card img {
-        width: 100%;
-        height: 200px;
-        object-fit: cover;
-        border-top-left-radius: 20px;
-        border-top-right-radius: 20px;
-    }
-    .chapter-card h3 {
-        margin: 1rem 0;
-        padding: 0 0.5rem;
-        font-size: 1rem;
-    }
-    .chapter-card a {
-        color: white;
-        text-decoration: none;
-        display: block;
-    }
-    .character-section {
-        margin-bottom: 3rem;
-    }
-</style>
+  </style>
 </head>
-<body>
-<header>
-    <a href="index.html">Zurück zur Übersicht</a>
-    <h1>Nothing even matters, because it’s the time of my life</h1>
-</header>
-<main>
+<body class="bg-gray-100 text-gray-900">
 
-    <section class="character-section hauptcharaktere">
-        <h2>Hauptcharaktere</h2>
-        <div class="grid">
-            <div class="card"><div class="card-inner">
-                <div class="card-front"><img src="Story-1/Hirohiko “Hiro” Murimota.png" alt="Hiro"></div>
-                <div class="card-back">Hirohiko "Hiro" Murimota: 19-jähriger Schüler zwischen Manhattan und Los Angeles, liebt Musik, Kochen und Bücher. Zwilling.</div>
-            </div></div>
-            <div class="card"><div class="card-inner">
-                <div class="card-front"><img src="Story-1/Alexis “Lexi” Kim.png" alt="Lexi"></div>
-                <div class="card-back">Alexis "Lexi" Kim: 18-jährige Studentin aus Hollywood. Kreativer Löwe, liebt Zeichnen, Singen und Mode.</div>
-            </div></div>
-            <div class="card"><div class="card-inner">
-                <div class="card-front"><img src="Story-1/Sean Bradford.png" alt="Sean"></div>
-                <div class="card-back">Sean Bradford: 21 Jahre alt, empathischer Fisch, liebt Tanzen, Fotografie und Autos.</div>
-            </div></div>
-            <div class="card"><div class="card-inner">
-                <div class="card-front"><img src="Story-1/Jane Wilson.png" alt="Jane"></div>
-                <div class="card-back">Jane Wilson: 19-jährige Jungfrau, liebt Schreiben, Singen und Shopping.</div>
-            </div></div>
-            <div class="card"><div class="card-inner">
-                <div class="card-front"><img src="Story-1/Tyler-Jeremy “T.J.” Young.png" alt="TJ"></div>
-                <div class="card-back">Tyler-Jeremy "T.J." Young: 22-jähriger kreativer Wassermann an der UCLA, liebt Musik, Kochen und Tanzen.</div>
-            </div></div>
-        </div>
-    </section>
+  <!-- Navigation -->
+  <header class="bg-white shadow p-4 mb-8">
+    <div class="container mx-auto flex justify-between items-center">
+      <a href="index.html" class="text-gray-700 hover:text-gray-900">Zurück zur Übersicht</a>
+      <h1 class="text-xl font-bold">Nothing even matters, because it’s the time of my life</h1>
+    </div>
+  </header>
 
-    <section class="character-section nebencharaktere">
-        <h2>Nebencharaktere</h2>
-        <div class="grid">
-            <div class="card"><div class="card-inner">
-                <div class="card-front"><img src="Story-1/Yukiko “Yuki” Murimota.png" alt="Yuki"></div>
-                <div class="card-back">Yukiko "Yuki" Murimota: 17 Jahre alt.</div>
-            </div></div>
-            <div class="card"><div class="card-inner">
-                <div class="card-front"><img src="Story-1/Lisa-Sarah Murimota.png" alt="Lisa"></div>
-                <div class="card-back">Lisa-Sarah Murimota: 45 Jahre alt.</div>
-            </div></div>
-            <div class="card"><div class="card-inner">
-                <div class="card-front"><img src="Story-1/Steven Hansen.png" alt="Steven"></div>
-                <div class="card-back">Steven Hansen: 19 Jahre alt.</div>
-            </div></div>
-            <div class="card"><div class="card-inner">
-                <div class="card-front"><img src="Story-1/Ryan Mitchell.png" alt="Ryan"></div>
-                <div class="card-back">Ryan Mitchell: 20 Jahre alt.</div>
-            </div></div>
-            <div class="card"><div class="card-inner">
-                <div class="card-front"><img src="Story-1/Sung-Hoo Murimota.png" alt="Sung-Hoo"></div>
-                <div class="card-back">Sung-Hoo Murimota: 21 Jahre alt.</div>
-            </div></div>
+  <!-- Hauptcharaktere -->
+  <section class="container mx-auto mb-12">
+    <h2 class="text-2xl font-semibold mb-6">Hauptcharaktere</h2>
+    <div class="grid grid-cols-2 md:grid-cols-5 gap-6">
+      <!-- 5 Hauptcharaktere -->
+      <div class="flip-card bg-white shadow-lg rounded-2xl" onclick="this.classList.toggle('flipped')">
+        <div class="flip-card-inner">
+          <div class="flip-card-front">
+            <img src="Story-1/Hirohiko “Hiro” Murimota.png" alt="Hirohiko „Hiro“ Murimota" class="w-full h-full object-cover">
+          </div>
+          <div class="flip-card-back">
+            <p>Hirohiko „Hiro“ Murimota ist ein 19-jähriger Schüler und Student, der zwischen dem pulsierenden Upper East Side in Manhattan und dem sonnigen Campus der UCLA in Los Angeles pendelt.
+                Mit seinem offenen, lebhaften Wesen spiegelt er das typische Sternzeichen Zwilling wider – neugierig, vielseitig und voller Energie.
+                In seiner Freizeit widmet Hiro sich seiner großen Leidenschaft für Musik, liebt es zu singen, zu kochen und sich in Bücher zu vertiefen.
+                Freunde nehmen einen zentralen Platz in seinem Leben ein; er schätzt echte Verbindungen und gemeinsame Erlebnisse über alles..</p>
+          </div>
         </div>
-    </section>
+      </div>
 
-    <section class="chapters">
-        <h2>Kapitel</h2>
-        <div class="grid">
-            <div class="chapter-card">
-                <a href="Story1-Kapitel1.html">
-                    <img src="Story-1/20250428_1025_New Beginnings in Manhattan_simple_compose_01jsxqza44e02v8nzh4whsmv90.png" alt="Kapitel 1">
-                    <h3>Kapitel 1: Show me</h3>
-                </a>
-            </div>
-            <div class="chapter-card">
-                <a href="kapitel2.html">
-                    <img src="Story-1/20250428_1031_Solitude in Central Park_simple_compose_01jsxr8j2yfcyaxmgz46b8v993.png" alt="Kapitel 2">
-                    <h3>Kapitel 2: Gone and not around any longer</h3>
-                </a>
-            </div>
-            <div class="chapter-card">
-                <a href="kapitel3.html">
-                    <img src="Story-1/20250428_1033_Lost in Manhattan_simple_compose_01jsxrd4e8ey9a8e4v2thdfxvs.png" alt="Kapitel 3">
-                    <h3>Kapitel 3: Feeldood Lies</h3>
-                </a>
-            </div>
+      <div class="flip-card bg-white shadow-lg rounded-2xl" onclick="this.classList.toggle('flipped')">
+        <div class="flip-card-inner">
+          <div class="flip-card-front">
+            <img src="Story-1/Alexis “Lexi” Kim.png" alt="Alexis „Lexi“ Kim" class="w-full h-full object-cover">
+          </div>
+          <div class="flip-card-back">
+            <p>Alexis „Lexi“ Kim ist eine 18-jährige Studentin und Kellnerin aus dem lebhaften Hollywood in Los Angeles.
+                Als typischer Löwe strahlt sie Selbstbewusstsein, Wärme und kreative Energie aus.
+                Lexi liebt es, ihre Gedanken durch Zeichnungen zum Leben zu erwecken, sich beim Singen auszudrücken und durch die Boutiquen der Stadt zu schlendern.
+                Für ihre Freunde ist sie eine loyale, strahlende Persönlichkeit, die jede Begegnung ein wenig bunter macht.</p>
+          </div>
         </div>
-    </section>
-</main>
+      </div>
+
+      <div class="flip-card bg-white shadow-lg rounded-2xl" onclick="this.classList.toggle('flipped')">
+        <div class="flip-card-inner">
+          <div class="flip-card-front">
+            <img src="Story-1/Sean Bradford.png" alt="Sean Bradford" class="w-full h-full object-cover">
+          </div>
+          <div class="flip-card-back">
+            <p>Sean Bradford ist 21 Jahre alt und lebt in Hollywood, Los Angeles, wo er an der Boston University studiert.
+                Mit seiner feinfühligen, oft träumerischen Art verkörpert er die Charakterzüge eines echten Fisches – empathisch, intuitiv und voller Leidenschaft.
+                Seine Freizeit verbringt Sean am liebsten mit Tanzen, Fotografie und dem Schrauben an Autos.
+                Trotz seiner ruhigen Fassade besitzt er eine bemerkenswerte Tiefe, die ihn zu einem treuen und aufrichtigen Freund macht.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="flip-card bg-white shadow-lg rounded-2xl" onclick="this.classList.toggle('flipped')">
+        <div class="flip-card-inner">
+          <div class="flip-card-front">
+            <img src="Story-1/Jane Wilson.png" alt="Jane Wilson" class="w-full h-full object-cover">
+          </div>
+          <div class="flip-card-back">
+            <p>Jane Wilson ist eine 19-jährige Aushilfe und Studentin in Hollywood, die mit ihrem scharfen Verstand und ihrer Bodenständigkeit typisch für das Sternzeichen Jungfrau ist.
+                Zwischen Vorlesungen und Arbeit findet sie Erfüllung im Schreiben, Singen und ausgiebigen Shoppingtouren.
+                Jane ist detailverliebt, loyal und jemand, auf den man sich immer verlassen kann – ein leiser, aber unerschütterlicher Mittelpunkt ihrer Freundesgruppe.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="flip-card bg-white shadow-lg rounded-2xl" onclick="this.classList.toggle('flipped')">
+        <div class="flip-card-inner">
+          <div class="flip-card-front">
+            <img src="Story-1/Tyler-Jeremy “T.J.” Young.png" alt="Tyler-Jeremy „T.J.“ Young" class="w-full h-full object-cover">
+          </div>
+          <div class="flip-card-back">
+            <p>Tyler-Jeremy „T.J.“ Young ist ein 22-jähriger Student an der UCLA in Westwood, Los Angeles.
+                Als geborener Wassermann strahlt er eine besondere Mischung aus Kreativität, Unabhängigkeit und unkonventionellem Charme aus.
+                T.J. liebt es zu kochen, zu singen, zu tanzen und in die Welt der Musik einzutauchen.
+                Offen, freiheitsliebend und voller Lebensfreude ist er der Freund, der neue Wege geht und andere mit seiner Begeisterung mitreißt</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Nebencharaktere -->
+  <section class="container mx-auto mb-12">
+    <h2 class="text-2xl font-semibold mb-6">Nebencharaktere</h2>
+    <div class="grid grid-cols-2 md:grid-cols-5 gap-6">
+      <!-- 5 Nebencharaktere -->
+      <div class="flip-card bg-white shadow-lg rounded-2xl" onclick="this.classList.toggle('flipped')">
+        <div class="flip-card-inner">
+          <div class="flip-card-front">
+            <img src="Story-1/Yukiko “Yuki” Murimota.png" alt="Yukiko „Yuki“ Murimota" class="w-full h-full object-cover">
+          </div>
+          <div class="flip-card-back">
+            <p>Yukiko „Yuki“ Murimota / 17 Jahre</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="flip-card bg-white shadow-lg rounded-2xl" onclick="this.classList.toggle('flipped')">
+        <div class="flip-card-inner">
+          <div class="flip-card-front">
+            <img src="Story-1/Lisa-Sarah Murimota.png" alt="Lisa-Sarah Murimota" class="w-full h-full object-cover">
+          </div>
+          <div class="flip-card-back">
+            <p>Lisa-Sarah Murimota / 45 Jahre</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="flip-card bg-white shadow-lg rounded-2xl" onclick="this.classList.toggle('flipped')">
+        <div class="flip-card-inner">
+          <div class="flip-card-front">
+            <img src="Story-1/Steven Hansen.png" alt="Steven Hansen" class="w-full h-full object-cover">
+          </div>
+          <div class="flip-card-back">
+            <p>Steven Hansen / 19 Jahre</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="flip-card bg-white shadow-lg rounded-2xl" onclick="this.classList.toggle('flipped')">
+        <div class="flip-card-inner">
+          <div class="flip-card-front">
+            <img src="Story-1/Ryan Mitchell.png" alt="Ryan Mitchell" class="w-full h-full object-cover">
+          </div>
+          <div class="flip-card-back">
+            <p>Ryan Mitchell / 20 Jahre</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="flip-card bg-white shadow-lg rounded-2xl" onclick="this.classList.toggle('flipped')">
+        <div class="flip-card-inner">
+          <div class="flip-card-front">
+            <img src="Story-1/Sung-Hoo Murimota.png" alt="Sung-Hoo Murimota" class="w-full h-full object-cover">
+          </div>
+          <div class="flip-card-back">
+            <p>Sung-Hoo Murimota / 21 Jahre</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Kapitel -->
+  <section class="container mx-auto mb-12">
+    <h2 class="text-2xl font-semibold mb-6">Kapitel</h2>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+      <a href="Story1-Kapitel1.html" class="block bg-white shadow-lg rounded-2xl transform hover:scale-105 transition overflow-hidden">
+        <img src="Story-1/20250428_1025_New Beginnings in Manhattan_simple_compose_01jsxqza44e02v8nzh4whsmv90.png" alt="Kapitel 1" class="w-full h-64 object-cover">
+        <div class="p-4">
+          <h3 class="text-lg font-bold">Kapitel 1: Show me</h3>
+        </div>
+      </a>
+      <a href="kapitel2.html" class="block bg-white shadow-lg rounded-2xl transform hover:scale-105 transition overflow-hidden">
+        <img src="https://via.placeholder.com/300x400" alt="Kapitel 2" class="w-full h-64 object-cover">
+        <div class="p-4">
+          <h3 class="text-lg font-bold">Kapitel 2: Gone and not around any longer</h3>
+        </div>
+      </a>
+      <a href="kapitel3.html" class="block bg-white shadow-lg rounded-2xl transform hover:scale-105 transition overflow-hidden">
+        <img src="https://via.placeholder.com/300x400" alt="Kapitel 3" class="w-full h-64 object-cover">
+        <div class="p-4">
+          <h3 class="text-lg font-bold">Kapitel 3: Feeldood Lies</h3>
+        </div>
+      </a>
+    </div>
+  </section>
+
 </body>
 </html>
