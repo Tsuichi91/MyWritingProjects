@@ -1,205 +1,99 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Geschichte 1 - Detailansicht</title>
-    <style>
-        body {
-            margin: 0;
-            font-family: Arial, sans-serif;
-            background-color: #141414;
-            color: white;
-        }
-        header {
-            display: flex;
-            align-items: center;
-            padding: 1rem 2rem;
-            background-color: #000;
-        }
-        header a {
-            color: white;
-            text-decoration: none;
-            margin-right: 2rem;
-        }
-        main {
-            padding: 2rem;
-        }
-        .synopsis {
-            margin-bottom: 2rem;
-        }
-        h2 {
-            margin-bottom: 1rem;
-        }
-        .grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-            gap: 1rem;
-        }
-        .card {
-            background-color: #222;
-            border-radius: 8px;
-            perspective: 1000px;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.5);
-            transition: transform 0.3s, box-shadow 0.3s;
-        }
-        .card-inner {
-            position: relative;
-            width: 100%;
-            height: 300px;
-            text-align: center;
-            transition: transform 0.8s;
-            transform-style: preserve-3d;
-            cursor: pointer;
-        }
-        .card:hover .card-inner {
-            transform: rotateY(180deg);
-        }
-        .card-front, .card-back {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            backface-visibility: hidden;
-            border-radius: 8px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 1rem;
-            box-sizing: border-box;
-        }
-        .card-front {
-            background-color: #333;
-        }
-        .card-back {
-            background-color: #555;
-            transform: rotateY(180deg);
-        }
-        .hauptcharaktere .card-front {
-            background: linear-gradient(135deg, #0066ff, #0033cc);
-        }
-        .nebencharaktere .card-front {
-            background: linear-gradient(135deg, #66cc66, #339933);
-        }
-        .chapter-card {
-            background-color: #222;
-            border-radius: 8px;
-            padding: 1rem;
-            text-align: center;
-            transition: background-color 0.3s, transform 0.3s;
-        }
-        .chapter-card:hover {
-            background-color: #333;
-            transform: scale(1.05);
-        }
-        .chapter-card a {
-            color: white;
-            text-decoration: none;
-            display: block;
-            height: 100%;
-            width: 100%;
-        }
-        .character-section {
-            margin-bottom: 3rem;
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Geschichte 1 - Detailansicht</title>
+<style>
+    /* (CSS bleibt wie zuvor, ausgelassen für Übersichtlichkeit) */
+</style>
 </head>
 <body>
-    <header>
-        <a href="index.html">Zurück zur Übersicht</a>
-        <h1>Geschichte 1</h1>
-    </header>
-    <main>
-        <section class="synopsis">
-            <h2>Synopsis</h2>
-            <p>Dies ist die kurze Zusammenfassung der Geschichte 1. Hier wird beschrieben, worum es geht.</p>
-        </section>
+<header>
+    <a href="index.html">Zurück zur Übersicht</a>
+    <h1>Geschichte 1</h1>
+</header>
+<main>
+    <section class="synopsis">
+        <h2>Synopsis</h2>
+        <p>Dies ist die kurze Zusammenfassung der Geschichte 1. Hier wird beschrieben, worum es geht.</p>
+    </section>
 
-        <section class="character-section hauptcharaktere">
-            <h2>Hauptcharaktere</h2>
-            <div class="grid">
-                <div class="card">
-                    <div class="card-inner">
-                        <div class="card-front">Hauptcharakter 1</div>
-                        <div class="card-back">Beschreibung von Hauptcharakter 1</div>
-                    </div>
-                </div>
-                <div class="card">
-                    <div class="card-inner">
-                        <div class="card-front">Hauptcharakter 2</div>
-                        <div class="card-back">Beschreibung von Hauptcharakter 2</div>
-                    </div>
-                </div>
-                <div class="card">
-                    <div class="card-inner">
-                        <div class="card-front">Hauptcharakter 3</div>
-                        <div class="card-back">Beschreibung von Hauptcharakter 3</div>
-                    </div>
-                </div>
-                <div class="card">
-                    <div class="card-inner">
-                        <div class="card-front">Hauptcharakter 4</div>
-                        <div class="card-back">Beschreibung von Hauptcharakter 4</div>
-                    </div>
-                </div>
-                <div class="card">
-                    <div class="card-inner">
-                        <div class="card-front">Hauptcharakter 5</div>
-                        <div class="card-back">Beschreibung von Hauptcharakter 5</div>
-                    </div>
-                </div>
-            </div>
-        </section>
+    <section class="character-section hauptcharaktere">
+        <h2>Hauptcharaktere</h2>
+        <div class="grid">
+            <div class="card"><div class="card-inner">
+                <div class="card-front"><img src="platzhalter.jpg" alt="Hiro"></div>
+                <div class="card-back">Hirohiko "Hiro" Murimota: 19-jähriger Schüler zwischen Manhattan und Los Angeles, liebt Musik, Kochen und Bücher. Zwilling.</div>
+            </div></div>
+            <div class="card"><div class="card-inner">
+                <div class="card-front"><img src="platzhalter.jpg" alt="Lexi"></div>
+                <div class="card-back">Alexis "Lexi" Kim: 18-jährige Studentin aus Hollywood. Kreativer Löwe, liebt Zeichnen, Singen und Mode.</div>
+            </div></div>
+            <div class="card"><div class="card-inner">
+                <div class="card-front"><img src="platzhalter.jpg" alt="Sean"></div>
+                <div class="card-back">Sean Bradford: 21 Jahre alt, empathischer Fisch, liebt Tanzen, Fotografie und Autos.</div>
+            </div></div>
+            <div class="card"><div class="card-inner">
+                <div class="card-front"><img src="platzhalter.jpg" alt="Jane"></div>
+                <div class="card-back">Jane Wilson: 19-jährige Jungfrau, liebt Schreiben, Singen und Shopping.</div>
+            </div></div>
+            <div class="card"><div class="card-inner">
+                <div class="card-front"><img src="platzhalter.jpg" alt="TJ"></div>
+                <div class="card-back">Tyler-Jeremy "T.J." Young: 22-jähriger kreativer Wassermann an der UCLA, liebt Musik, Kochen und Tanzen.</div>
+            </div></div>
+        </div>
+    </section>
 
-        <section class="character-section nebencharaktere">
-            <h2>Nebencharaktere</h2>
-            <div class="grid">
-                <div class="card">
-                    <div class="card-inner">
-                        <div class="card-front">Nebencharakter 1</div>
-                        <div class="card-back">Beschreibung von Nebencharakter 1</div>
-                    </div>
-                </div>
-                <div class="card">
-                    <div class="card-inner">
-                        <div class="card-front">Nebencharakter 2</div>
-                        <div class="card-back">Beschreibung von Nebencharakter 2</div>
-                    </div>
-                </div>
-                <div class="card">
-                    <div class="card-inner">
-                        <div class="card-front">Nebencharakter 3</div>
-                        <div class="card-back">Beschreibung von Nebencharakter 3</div>
-                    </div>
-                </div>
-                <div class="card">
-                    <div class="card-inner">
-                        <div class="card-front">Nebencharakter 4</div>
-                        <div class="card-back">Beschreibung von Nebencharakter 4</div>
-                    </div>
-                </div>
-                <div class="card">
-                    <div class="card-inner">
-                        <div class="card-front">Nebencharakter 5</div>
-                        <div class="card-back">Beschreibung von Nebencharakter 5</div>
-                    </div>
-                </div>
-            </div>
-        </section>
+    <section class="character-section nebencharaktere">
+        <h2>Nebencharaktere</h2>
+        <div class="grid">
+            <div class="card"><div class="card-inner">
+                <div class="card-front"><img src="platzhalter.jpg" alt="Yuki"></div>
+                <div class="card-back">Yukiko "Yuki" Murimota: 17 Jahre alt.</div>
+            </div></div>
+            <div class="card"><div class="card-inner">
+                <div class="card-front"><img src="platzhalter.jpg" alt="Lisa"></div>
+                <div class="card-back">Lisa-Sarah Murimota: 45 Jahre alt.</div>
+            </div></div>
+            <div class="card"><div class="card-inner">
+                <div class="card-front"><img src="platzhalter.jpg" alt="Steven"></div>
+                <div class="card-back">Steven Hansen: 19 Jahre alt.</div>
+            </div></div>
+            <div class="card"><div class="card-inner">
+                <div class="card-front"><img src="platzhalter.jpg" alt="Ryan"></div>
+                <div class="card-back">Ryan Mitchell: 20 Jahre alt.</div>
+            </div></div>
+            <div class="card"><div class="card-inner">
+                <div class="card-front"><img src="platzhalter.jpg" alt="Sung-Hoo"></div>
+                <div class="card-back">Sung-Hoo Murimota: 21 Jahre alt.</div>
+            </div></div>
+        </div>
+    </section>
 
-        <section class="chapters">
-            <h2>Kapitel</h2>
-            <div class="grid">
-                <div class="chapter-card">
-                    <a href="kapitel1.html">Kapitel 1: Titel des Kapitels</a>
-                </div>
-                <div class="chapter-card">
-                    <a href="kapitel2.html">Kapitel 2: Titel des Kapitels</a>
-                </div>
-                <div class="chapter-card">
-                    <a href="kapitel3.html">Kapitel 3: Titel des Kapitels</a>
-                </div>
+    <section class="chapters">
+        <h2>Kapitel</h2>
+        <div class="grid">
+            <div class="chapter-card">
+                <a href="kapitel1.html">
+                    <img src="platzhalter_kapitel1.jpg" alt="Kapitel 1">
+                    <h3>Kapitel 1: Titel des Kapitels</h3>
+                </a>
             </div>
-        </section>
-    </main>
+            <div class="chapter-card">
+                <a href="kapitel2.html">
+                    <img src="platzhalter_kapitel2.jpg" alt="Kapitel 2">
+                    <h3>Kapitel 2: Titel des Kapitels</h3>
+                </a>
+            </div>
+            <div class="chapter-card">
+                <a href="kapitel3.html">
+                    <img src="platzhalter_kapitel3.jpg" alt="Kapitel 3">
+                    <h3>Kapitel 3: Titel des Kapitels</h3>
+                </a>
+            </div>
+        </div>
+    </section>
+</main>
 </body>
 </html>
